@@ -1,67 +1,60 @@
 window.onload = function () {
-    setTimeout(() => {
+
+    setTimeout(function () {
         document.getElementById("loader").classList.add("hide");
         document.getElementById("home").classList.remove("hide");
     }, 2000);
+
 };
 
 const home = document.getElementById("home");
 const gift = document.getElementById("gift");
 const letter = document.getElementById("letter");
-const finalPage = document.getElementById("final");
+const final = document.getElementById("final");
+
+const music = document.getElementById("music");
 
 document.getElementById("startBtn").onclick = function () {
+
     home.classList.add("hide");
     gift.classList.remove("hide");
 
-    const music = document.getElementById("music");
-    if (music) {
-        music.play().catch(() => { });
-    }
+    music.play().catch(() => { });
+
 };
 
 document.getElementById("giftBtn").onclick = function () {
+
     gift.classList.add("hide");
     letter.classList.remove("hide");
+
 };
 
 document.getElementById("nextBtn").onclick = function () {
+
     letter.classList.add("hide");
-    finalPage.classList.remove("hide");
-    confetti();
+    final.classList.remove("hide");
+
 };
 
-function confetti() {
-    for (let i = 0; i < 120; i++) {
-        let c = document.createElement("div");
+setInterval(function () {
 
-        c.innerHTML = ["🎉", "✨", "🎊", "❤️"][Math.floor(Math.random() * 4)];
-
-        c.style.position = "fixed";
-        c.style.left = Math.random() * 100 + "vw";
-        c.style.top = "-30px";
-        c.style.fontSize = (20 + Math.random() * 25) + "px";
-        c.style.animation = "fly " + (4 + Math.random() * 4) + "s linear";
-
-        document.body.appendChild(c);
-
-        setTimeout(() => c.remove(), 8000);
-    }
-}
-
-setInterval(() => {
     let b = document.createElement("div");
 
     b.className = "balloon";
-    b.innerHTML = ["🎈", "🎈", "❤️", "✨"][Math.floor(Math.random() * 4)];
+
+    b.innerHTML = ["🎈", "🎉", "❤️", "✨", "🎂"][Math.floor(Math.random() * 5)];
 
     b.style.left = Math.random() * 100 + "vw";
-    b.style.animationDuration = (6 + Math.random() * 5) + "s";
+
+    b.style.animationDuration = (5 + Math.random() * 4) + "s";
 
     document.body.appendChild(b);
 
-    setTimeout(() => {
+    setTimeout(function () {
+
         b.remove();
-    }, 10000);
+
+    }, 9000);
 
 }, 500);
