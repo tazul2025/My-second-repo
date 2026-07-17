@@ -1,60 +1,60 @@
 window.onload = function () {
 
-    setTimeout(function () {
-        document.getElementById("loader").classList.add("hide");
-        document.getElementById("home").classList.remove("hide");
-    }, 2000);
+setTimeout(function () {
+document.getElementById("loader").classList.add("hide");
+document.getElementById("home").classList.remove("hide");
+},2000);
 
 };
 
-const home = document.getElementById("home");
-const gift = document.getElementById("gift");
-const letter = document.getElementById("letter");
-const final = document.getElementById("final");
+const home=document.getElementById("home");
+const gift=document.getElementById("gift");
+const letter=document.getElementById("letter");
+const final=document.getElementById("final");
 
-const music = document.getElementById("music");
+const music=document.getElementById("music");
 
-document.getElementById("startBtn").onclick = function () {
+document.getElementById("startBtn").onclick=function(){
 
-    home.classList.add("hide");
-    gift.classList.remove("hide");
+home.classList.add("hide");
+gift.classList.remove("hide");
 
-    music.play().catch(() => { });
-
-};
-
-document.getElementById("giftBtn").onclick = function () {
-
-    gift.classList.add("hide");
-    letter.classList.remove("hide");
+music.play().catch(()=>{});
 
 };
 
-document.getElementById("nextBtn").onclick = function () {
+document.getElementById("giftBtn").onclick=function(){
 
-    letter.classList.add("hide");
-    final.classList.remove("hide");
+gift.classList.add("hide");
+letter.classList.remove("hide");
 
 };
 
-setInterval(function () {
+document.getElementById("nextBtn").onclick=function(){
 
-    let b = document.createElement("div");
+letter.classList.add("hide");
+final.classList.remove("hide");
 
-    b.className = "balloon";
+};
 
-    b.innerHTML = ["🎈", "🎉", "❤️", "✨", "🎂"][Math.floor(Math.random() * 5)];
+setInterval(function(){
 
-    b.style.left = Math.random() * 100 + "vw";
+let b=document.createElement("div");
 
-    b.style.animationDuration = (5 + Math.random() * 4) + "s";
+b.className="balloon";
 
-    document.body.appendChild(b);
+b.innerHTML=["🎈","🎉","❤️","✨","🎂"][Math.floor(Math.random()*5)];
 
-    setTimeout(function () {
+b.style.left=Math.random()*100+"vw";
 
-        b.remove();
+b.style.animationDuration=(5+Math.random()*4)+"s";
 
-    }, 9000);
+document.body.appendChild(b);
 
-}, 500);
+setTimeout(function(){
+
+b.remove();
+
+},9000);
+
+},500);
